@@ -206,6 +206,7 @@ var Validator = /** @class */ (function () {
         this.refreshState(buildInitialState(componentState, this.validationDescription, this.insertedArgs, this.ruleIdsInFields));
     };
     Validator.prototype.validate = function (componentState) {
+        console.log('validate', componentState);
         if (!this.isInitValidationStateSet) {
             this.setInitialValues(componentState);
             var initialState_1 = this.validationState;
