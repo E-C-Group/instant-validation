@@ -70,11 +70,12 @@ class Validator<ComponentState> {
   }
 
   validate(componentState: ComponentState): ValidateReturn<ComponentState> {
+
+    console.log('validate', componentState);
+
     if (!this.isInitValidationStateSet) {
       this.setInitialValues(componentState);
-      const initialState = this.validationState as ValidationState<
-        ComponentState
-      >;
+      const initialState = this.validationState as ValidationState<ComponentState>;
       return {
         errors: getErrorMessages(initialState, this.validationDescription),
         get fields() {
@@ -100,9 +101,7 @@ class Validator<ComponentState> {
         )
       );
     }
-    const updatedState = this.validationState as ValidationState<
-      ComponentState
-    >;
+    const updatedState = this.validationState as ValidationState<ComponentState>;
     return {
       errors: getErrorMessages(updatedState, this.validationDescription),
       get fields() {
@@ -112,9 +111,7 @@ class Validator<ComponentState> {
   }
 
   isFormValid(): boolean {
-    return isStateValid(this.validationState as ValidationState<
-      ComponentState
-    >);
+    return isStateValid(this.validationState as ValidationState<ComponentState>);
   }
 
   insertArgs(args: InsertedArgs): Validator<ComponentState> {

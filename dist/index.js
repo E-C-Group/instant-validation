@@ -27,7 +27,7 @@ var __assign = function() {
 };
 
 function findDifference(componentStateUpdates, actualValidationState, updatedArgsField) {
-    console.log('findDifference', actualValidationState);
+    console.log('actualValidationState', actualValidationState);
     var difference = Object.keys(actualValidationState).reduce(function (acc, fieldName) {
         if (typeof componentStateUpdates[fieldName] === 'undefined' ||
             componentStateUpdates[fieldName] ===

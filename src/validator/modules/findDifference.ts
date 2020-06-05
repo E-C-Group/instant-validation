@@ -6,7 +6,7 @@ function findDifference<ComponentState>(
   updatedArgsField: ChangedArgsFields
 ): Partial<ComponentState> {
 
-  console.log('findDifference',actualValidationState);
+  console.log('actualValidationState',actualValidationState);
 
   const difference = Object.keys(actualValidationState).reduce(
     (acc, fieldName) => {
@@ -23,11 +23,13 @@ function findDifference<ComponentState>(
     },
     {}
   );
+
   const argsDifference = updatedArgsField.reduce((acc, fieldName) => {
     acc[fieldName] = componentStateUpdates[fieldName];
     return acc;
   }, {});
   return {...difference, ...argsDifference};
+
 }
 
 export {findDifference};
