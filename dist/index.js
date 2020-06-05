@@ -86,6 +86,7 @@ function validateFieldsByDiff(newDiff, oldValidationState, validationDescription
 function buildInitialState(componentState, validationDescription, insertedArgs, ruleIdsInFields) {
     var initialDiff = {};
     var initialState = {};
+    console.log('buildInitialState', componentState, validationDescription);
     Object.keys(validationDescription).forEach(function (fieldName) {
         if (typeof componentState[fieldName] === 'undefined') {
             throw new Error("It seems that you didn't passed a field '" + fieldName + "' value");

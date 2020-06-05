@@ -12,6 +12,9 @@ function buildInitialState<ComponentState>(
 ): ValidationState<ComponentState> {
   let initialDiff = {} as Partial<ComponentState>;
   let initialState = {} as ValidationState<ComponentState>;
+
+  console.log('buildInitialState', componentState, validationDescription);
+
   Object.keys(validationDescription).forEach(fieldName => {
     if (typeof componentState[fieldName] === 'undefined') {
       throw new Error(
