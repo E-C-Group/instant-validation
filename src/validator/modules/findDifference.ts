@@ -1,4 +1,4 @@
-import { ChangedArgsFields, ValidationState } from '../types';
+import {ChangedArgsFields, ValidationState} from '../types';
 
 function findDifference<ComponentState>(
   componentStateUpdates: ComponentState,
@@ -10,7 +10,7 @@ function findDifference<ComponentState>(
       if (
         typeof componentStateUpdates[fieldName] === 'undefined' ||
         componentStateUpdates[fieldName] ===
-          actualValidationState[fieldName].value
+        actualValidationState[fieldName].value
       ) {
         return acc;
       }
@@ -24,7 +24,7 @@ function findDifference<ComponentState>(
     acc[fieldName] = componentStateUpdates[fieldName];
     return acc;
   }, {});
-  return { ...difference, ...argsDifference };
+  return {...difference, ...argsDifference};
 }
 
-export { findDifference };
+export {findDifference};
