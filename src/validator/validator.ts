@@ -55,6 +55,9 @@ class Validator<ComponentState> {
   }
 
   setInitialValues(componentState: ComponentState): void {
+
+    console.log('setInitialValues', componentState);
+
     if (this.isInitValidationStateSet) {
       return;
     }
@@ -136,6 +139,7 @@ class Validator<ComponentState> {
   }
 
   private refreshState(validationState: ValidationState<ComponentState>): void {
+    console.log('refreshState', validationState);
     this.validationState = validationState;
   }
 }

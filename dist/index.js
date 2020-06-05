@@ -199,6 +199,7 @@ var Validator = /** @class */ (function () {
         this.insertedArgs = {};
     }
     Validator.prototype.setInitialValues = function (componentState) {
+        console.log('setInitialValues', componentState);
         if (this.isInitValidationStateSet) {
             return;
         }
@@ -244,6 +245,7 @@ var Validator = /** @class */ (function () {
         this.refreshState(showAllErrors(this.validationState, show));
     };
     Validator.prototype.refreshState = function (validationState) {
+        console.log('refreshState', validationState);
         this.validationState = validationState;
     };
     return Validator;
